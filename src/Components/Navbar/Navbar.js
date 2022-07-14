@@ -15,7 +15,7 @@ function Navbar() {
     const loggingOut = async () => {
       await logout().then(() => {
         setcheckLogin(false)
-        navigate("/auth/login");
+        navigate("/");
       });
     };
     useEffect(() => {

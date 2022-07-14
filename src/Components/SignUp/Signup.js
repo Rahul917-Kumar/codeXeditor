@@ -35,7 +35,7 @@ function Signup() {
             username:name
         }).then(()=>{
             setLoading(false)
-            navigate("/auth/login");
+            navigate("/");
         })
         .catch((err)=>{
             console.log(err)
@@ -149,7 +149,7 @@ function Signup() {
                   <p style={{ color: "#1976D2" }}>
                     already have an account?{" "}
                     <Link
-                      to="/auth/login"
+                      to="/"
                       style={{ textDecoration: "none", color: "#412ba1" }}
                     >
                       Login here
