@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+
+.parentSignInContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.signInContainer{
+    width: 30%;
+    margin: 0 auto;
+    /* background-color: pink; */
+    border: 1px solid #50C0FF;
+    border-radius: 10px;
+    /*  */
+}
+
+
+
+@media screen and (max-width: 1000px){
+    .signInContainer{
+         width: 50%;
+    }
+    
+}
+
+@media screen and (max-width: 700px){
+    .signInContainer{
+         width: 70%;
+    }
+    
+}
+@media screen and (max-width: 500px){
+    .signInContainer{
+         width: 90%;
+    }
+    
+}

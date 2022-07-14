@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+
+.parentSignUpContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.signUpContainer{
+    width: 30%;
+    margin: 0 auto;
+    /* background-color: pink; */
+    border: 1px solid #50C0FF;
+    border-radius: 10px;
+    /*  */
+}
+
+.details{
+    color: #50C0FF;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-fields-container{
+    margin: 1rem;
+    
+}
+
+@media screen and (max-width: 1000px){
+    .signUpContainer{
+         width: 50%;
+    }
+    
+}
+
+@media screen and (max-width: 700px){
+    .signUpContainer{
+         width: 70%;
+    }
+    
+}
+@media screen and (max-width: 500px){
+    .signUpContainer{
+         width: 90%;
+    }
+    
+}

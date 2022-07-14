@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+.containProjects{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+
+
+
+.card{
+    background-color: #1B212E;
+    width: 100%;
+    margin: 1rem;
+    border-radius:5px;
+    padding: 1rem;
+    height: 170px;
+}
+
+.card-heading{
+    color: #49B9F8;
+    margin-bottom: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.8rem;
+}
+
+.card-projectCreated-date{
+    color: #FFFFFF;
+    margin-top:1rem ;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.message-when-there-are-no-projects{
+    color: #293141;
+    
+    width: 78%;
+    height: 60vh;
+    display: flex;
+    margin: 0 auto;
+     justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    font-size: 1.5rem;
+}
+
+
+
+
+@media screen and (min-width: 600px){
+    .card{
+        width: 40%;
+        height: 170px;
+    }
+    .message-when-there-are-no-projects{
+        font-size: 2rem;
+         width: 60%;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .card{
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .containProjects{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .card{
+        width: 30%;
+        
+    }
+}
+
+
