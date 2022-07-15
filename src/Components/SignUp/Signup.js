@@ -7,6 +7,9 @@ import { makeStyles } from "@mui/styles";
 import { Button, InputBase } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./signup.css"
 const useStyles = makeStyles({
     inputbase:{
@@ -28,23 +31,34 @@ function Signup() {
   const registerUser = async (e) => {
     e.preventDefault();
     try {
-      await createUser(email, password).then((res) => {
-        setLoading(true);
-        const ref = doc(db ,"codeeditor" ,res.user.uid)
-        setDoc(ref ,{
-            username:name
-        }).then(()=>{
-            setLoading(false)
-            navigate("/");
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-        
-      });
+      if(!name || !password || !email){
+        throw new Error("Please fill all the inputs");
+      }
+      try {
+        await createUser(email, password).then((res) => {
+          setLoading(true);
+          const ref = doc(db, "codeeditor", res.user.uid);
+          setDoc(ref, {
+            username: name,
+          })
+            .then(() => {
+              setLoading(false);
+              navigate("/");
+            })
+        });
+      } catch (error) {
+        toast.warn("Invalid Credentials", {
+          position: "top-center",
+        });
+        console.log(error);
+      }
     } catch (error) {
-      console.log(error);
+      toast.warn("Please fill all the inputs", {
+        position: "top-center",
+      });
+      console.log()
     }
+    
   };
   return (
     <>
@@ -158,6 +172,7 @@ function Signup() {
                 </div>
               </form>
             </div>
+            <ToastContainer />
           </div>
         </>
       )}

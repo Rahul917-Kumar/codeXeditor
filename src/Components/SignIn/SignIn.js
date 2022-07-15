@@ -9,6 +9,9 @@ import CircularProgress from "@mui/material/CircularProgress";
 import "../SignUp/signup.css";
 import "./signin.css"
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const useStyles = makeStyles({
   inputbase: {
     border: "1px solid blue",
@@ -26,14 +29,30 @@ function SignIn() {
   const { signIn } = useContext(UserContext);
   const loginUser = async (e) => {
     e.preventDefault();
+
     try {
-        setLoading(true)
-      await signIn(email, password).then(() => {
-        setLoading(false)
-        navigate("/projects");
-      });
+      if ( !password || !email) {
+        throw new Error("Please fill all the inputs");
+      }
+      try {
+        await signIn(email, password)
+          .then(() => {
+            setLoading(false);
+          })
+          .then(() => {
+            setLoading(false);
+            navigate("/projects");
+          });
+      } catch (error) {
+        toast.warn("Invalid Credentials", {
+          position: "top-center",
+        });
+        console.log(error);
+      }
     } catch (error) {
-      console.log(error);
+      toast.warn("Please fill all the inputs", {
+        position: "top-center",
+      });
     }
   };
 
@@ -127,6 +146,7 @@ function SignIn() {
                 </div>
               </form>
             </div>
+            <ToastContainer/>
           </div>
         </>
       )}

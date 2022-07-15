@@ -86,7 +86,7 @@ function Editor() {
   useEffect(() => {
     console.log(id);
     //let uid = localStorage.getItem("userId");
-    const getdataOfProject = async () => {
+      const getdataOfProject = async () => {
       const subref = doc(db, "codeeditor", userId, "projectsCollection", id);
       const docSnap = await getDoc(subref);
 
@@ -94,9 +94,10 @@ function Editor() {
       setCss(docSnap.data().css);
       setJs(docSnap.data().js);
       setName(docSnap.data().name);
-      setLoading(false);
-      setcheckLogin(true);
       setShowNavbar(false);
+      setLoading(false);  
+      setcheckLogin(true);
+      
     };
     getdataOfProject();
   }, [id, setcheckLogin, setShowNavbar, userId]);

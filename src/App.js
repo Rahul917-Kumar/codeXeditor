@@ -6,6 +6,8 @@ import Project from './Components/ProjectCollection/Project';
 import Signup from './Components/SignUp/Signup';
 import SignIn from './Components/SignIn/SignIn';
 import Navbar from './Components/Navbar/Navbar';
+import DeployProject from './Components/DeployProject/DeployProjectView/DeployProject';
+
 function App() {
   return (
     <Router>
@@ -14,7 +16,9 @@ function App() {
         <Route exact path='/' element={<SignIn/>} />
         <Route exact path="/auth/signup" element={<Signup/>} />
         <Route exact path='/editor/:userId/:id' element={<Editor/>} />
+        <Route exact path='/deploy/:userId/:id' element={<DeployProject/>} />
         <Route exact path="/projects" element={<Project/>} />
+
       </Routes>
     </Router>
    

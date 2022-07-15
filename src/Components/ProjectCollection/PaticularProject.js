@@ -7,7 +7,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 import { Button } from "@mui/material";
 
-function PaticularProject({ data, VisitPen, deleteProject }) {
+function PaticularProject({ data, VisitPen, deleteProject,  openDeployWindow}) {
   return (
     <>
       <div>
@@ -28,7 +28,7 @@ function PaticularProject({ data, VisitPen, deleteProject }) {
         >
           Open
         </Button>
-        <Button size="medium" color="primary" startIcon={<LanguageIcon />}>
+        <Button size="medium" color="primary" startIcon={<LanguageIcon />} onClick={()=>openDeployWindow(data.id)}>
           Visit
         </Button>
         <Button

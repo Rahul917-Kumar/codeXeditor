@@ -73,6 +73,11 @@ function Project() {
     setAlldata([...newData_AfterDeletion]);
   };
 
+  const openDeployWindow = (penID)=>{
+    let uid = localStorage.getItem("userId");
+    window.open((`/deploy/${uid}/${penID}`) )
+  }
+
   return (
     <>
       {loading ? (
@@ -102,6 +107,7 @@ function Project() {
                           data={data}
                           deleteProject={deleteProject}
                           VisitPen={VisitPen}
+                          openDeployWindow={openDeployWindow}
                         />
                       </div>
                     );

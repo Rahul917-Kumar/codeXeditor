@@ -18,7 +18,6 @@ function GlobalState({ children }) {
   };
 
   const signIn = (email, password) => {
-    setcheckLogin(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
   const logout = () => {
