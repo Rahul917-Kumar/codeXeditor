@@ -61,8 +61,8 @@ function Project() {
   };
 
   const VisitPen = (penID) => {
-    let uid = localStorage.getItem("userId");
-    navigate(`/editor/${uid}/${penID}`);
+    //let uid = localStorage.getItem("userId");
+    navigate(`/editor/${penID}`);
   };
 
   const deleteProject = async (penID) => {
