@@ -33,7 +33,9 @@ function Project() {
       const docSnap = await getDocs(ref);
       const newData = [...docSnap.docs.map((d) => ({ id: d.id, ...d.data() }))];
       setAlldata([...newData]);
-      if (alldata.length === 0) setZeroProjectYet(true);
+      if (alldata.length === 0) {
+        setZeroProjectYet(true);
+      }
       else setZeroProjectYet(false);
       setLoading(false);
     };
@@ -54,12 +56,13 @@ function Project() {
       css: "/*css code goes here*/",
       js: "/*Js code goes here*/",
     }).then(() => {
-      navigate(`/editor/${projectId}`);
+      navigate(`/editor/${uid}/${projectId}`);
     });
   };
 
   const VisitPen = (penID) => {
-    navigate(`/editor/${penID}`);
+    let uid = localStorage.getItem("userId");
+    navigate(`/editor/${uid}/${penID}`);
   };
 
   const deleteProject = async (penID) => {

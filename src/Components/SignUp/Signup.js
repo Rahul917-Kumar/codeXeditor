@@ -142,7 +142,7 @@ function Signup() {
                     fullWidth
                     sx={{ fontSize: "1.4rem" }}
                   >
-                    SignUp
+                    Sign Up
                   </Button>
                 </div>
                 <div style={{ textAlign: "center", margin: "1rem 0 1rem 0" }}>

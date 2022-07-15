@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 function Editor() {
      const { setcheckLogin, setShowNavbar } = useContext(UserContext);
   const classes = useStyles();
-  const { id } = useParams();
+  const {  userId,id } = useParams();
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const [html, setHtml] = useState("");
@@ -85,9 +85,9 @@ function Editor() {
   
   useEffect(() => {
     console.log(id);
-    let uid = localStorage.getItem("userId");
+    //let uid = localStorage.getItem("userId");
     const getdataOfProject = async () => {
-      const subref = doc(db, "codeeditor", uid, "projectsCollection", id);
+      const subref = doc(db, "codeeditor", userId, "projectsCollection", id);
       const docSnap = await getDoc(subref);
 
       setHtml(docSnap.data().html);
@@ -99,13 +99,13 @@ function Editor() {
       setShowNavbar(false);
     };
     getdataOfProject();
-  }, [id, setcheckLogin, setShowNavbar]);
+  }, [id, setcheckLogin, setShowNavbar, userId]);
 
   const saveCurrentProgress = async () => {
-    const uid = localStorage.getItem("userId");
+    //const uid = localStorage.getItem("userId");
     // thsi is to update a specific document in subcollection we use hehrarical method to reach upto that paticular document
     // which need to update
-    const subref = doc(db, "codeeditor", uid, "projectsCollection", id);
+    const subref = doc(db, "codeeditor", userId, "projectsCollection", id);
     await updateDoc(subref, {
       name: name,
       html: html,
