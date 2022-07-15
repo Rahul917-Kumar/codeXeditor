@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/deploy/:userId/:id" element={<DeployProject />} />
         <Route
           exact
-          path="/editor/:userId/:id"
+          path="/deploy/editor/:userId/:id"
           element={<DeployProjectCode />}
         />
         <Route exact path="/projects" element={<Project />} />

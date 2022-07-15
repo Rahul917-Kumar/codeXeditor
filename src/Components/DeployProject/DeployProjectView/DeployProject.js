@@ -67,7 +67,7 @@ function DeployProject() {
     }, [id, userId, setShowNavbar]);
 
      const VisitPen = () => {
-       navigate(`/editor/${userId}/${id}`);
+       navigate(`/deploy/editor/${userId}/${id}`);
      };
 
 
