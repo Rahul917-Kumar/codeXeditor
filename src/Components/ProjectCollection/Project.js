@@ -56,7 +56,7 @@ function Project() {
       css: "/*css code goes here*/",
       js: "/*Js code goes here*/",
     }).then(() => {
-      navigate(`/editor/${uid}/${projectId}`);
+      navigate(`/editor/${projectId}`);
     });
   };
 
