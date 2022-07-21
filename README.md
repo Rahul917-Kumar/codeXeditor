@@ -2,7 +2,7 @@
 CodeXEditor is a real-time code editor where you can write and see the changes in real-time, people can showcase their created projects to others.
 
 ## Test ID and Password to Login
-   ### Email 📧 :-> test2@.com
+   ### Email 📧 :-> test@2.com
    ### Password  :-> rahul123
 
 
