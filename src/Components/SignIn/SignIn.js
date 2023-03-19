@@ -82,7 +82,7 @@ function SignIn() {
               </p>
               <form>
                 <div className="input-fields-container">
-                  <p className="details">Enter Your Name</p>
+                  <p className="details">Enter Your Email</p>
                   <InputBase
                     id="standard-basic"
                     label="Standard"
