@@ -1,6 +1,17 @@
 # CodeXEditor
 CodeXEditor is a real-time code editor where you can write and see the changes in real-time, people can showcase their created projects to others.
 
+## Quick look at the final project
+### Dashboard
+![[photo1]](assets/landing_page.png)
+![[photo1]](assets/created_codex.png)
+
+
+### Editor page
+![[photo1]](assets/editor.png)
+
+
+
 ## Test ID and Password to Login
    ### Email 📧 :-> test@2.com
    ### Password  :-> rahul123
